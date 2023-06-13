@@ -1,0 +1,31 @@
+@import "../../../assets/variables";
+
+.defund-selector {
+    background-color: $text-color-1;
+    border-radius: $default-border-radius;
+    box-shadow: $card-box-shadow;
+    height: $input-height;
+    padding: 4.8px;
+    font-size: 1.5em;
+    line-height: 1em;
+    margin-top: 0;
+    margin-right: $default-margin/4;
+
+    .defund-selector-active {
+        background-color: $sidenav-background-color;
+        color: $text-color-1;
+        border-radius: $default-border-radius;
+        padding: $default-margin/2;
+        //margin-left: 8px;
+        //margin-right: 8px;
+        cursor: pointer;
+    }
+
+    .defund-selector-not-active {
+        border-radius: $default-border-radius;
+        padding: $default-margin/2;
+        cursor: pointer;
+    }
+
+
+}

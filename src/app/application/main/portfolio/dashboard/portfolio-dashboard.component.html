@@ -1,0 +1,43 @@
+<div class="container-fluid">
+
+    <div class="row portfolio-header">
+        <div class="col-4 portfolio-title">
+            <div>My Portfolio</div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-12">
+            <div class="balance-container">
+                <div class="row">
+                    <div class="col-6 my-balance">
+                        <span class="my-balance-title">My Balance</span>
+                        <span class="my-balance-amount">{{utils.formatDollar(myBalance$ |async)}}</span>
+                    </div>
+                    <div class="col-6 graph-controller text-center">
+                        <div class="separator"></div>
+                        <span class="my-balance-title">1H</span>
+                        <span class="my-balance-title">1D</span>
+                        <span class="my-balance-title">7D</span>
+                        <span class="my-balance-title">1M</span>
+                        <span class="my-balance-title">YTD</span>
+                        <span class="my-balance-title">ALL</span>
+                    </div>
+                </div>
+                <div class="row">
+                    <img class="my-balance-graph rounded mx-auto d-block" alt="my-balance"
+                         src="../../../../../assets/img/my-balance.png">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row margin-top">
+        <div class="col-4 offset-8">
+            <dip-slide-selector (tabChange)="changeTab($event)" [tabList]="myPortfolioSelectorOptions"
+                                [selectedTab]="selectedTab"></dip-slide-selector>
+        </div>
+    </div>
+    <dip-portfolio-dashboard-defunds-table  *ngIf="selectedTab==='Defunds'"></dip-portfolio-dashboard-defunds-table>
+    <dip-portfolio-dashboard-managers-table  *ngIf="selectedTab==='Managers'"></dip-portfolio-dashboard-managers-table>
+</div>

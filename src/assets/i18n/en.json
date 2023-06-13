@@ -1,0 +1,52 @@
+{
+    "landingPage": {
+        "goToApp": "Go to application",
+        "createDefund": "Create a Defund",
+        "exploreDefund": "Explore Defunds",
+        "createOrJoinDefund": "Create or Join a Defund  ➜",
+        "start": "Start  ➜"
+    },
+    "app": {
+        "header": {
+            "connectToWallet": "Connect Wallet"
+        },
+        "sidenav": {
+            "createDefund": "+ Create DeFund"
+        },
+        "defund": {
+            "dashboard": {
+                "tab": {
+                    "overview": "Overview",
+                    "members": "Members",
+                    "activity": "Activity",
+                    "summary": "Summary"
+                }
+            }
+        },
+        "createDefund": {
+            "createDefundTitle": "Create a New DeFund",
+            "defundName": "DeFund Name",
+            "aboutDeFund": "About the DeFund",
+            "initialDeposit": "Initial Deposit",
+            "username": "Username",
+            "aboutYourself":  "About Yourself",
+            "chooseNetwork": "Choose Network"
+        },
+        "deposit": {
+            "depositTitle": "Deposit",
+            "amountToDeposit": "Amount",
+            "token": "Token"
+        },
+        "withdrawn": {
+            "withdrawnTitle": "Withdrawn",
+            "amountToWithdrawn": "Amount",
+            "token": "Token"
+        },
+        "swap": {
+            "swapTitle": "Swap",
+            "amountToSwap": "Amount",
+            "tokenIn": "Token From",
+            "tokenOut": "Token To"
+        }
+    }
+}

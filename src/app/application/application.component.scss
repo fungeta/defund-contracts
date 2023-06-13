@@ -1,0 +1,52 @@
+@import "../../assets/variables";
+
+//* {
+//  border: solid 1px red;
+//}
+
+$sidenav-width: 300px;
+
+mat-sidenav-container {
+    height: 100%;
+    background-color: transparent;
+}
+
+.navigation-sidenav {
+    margin: $default-margin 0 $default-margin $default-margin;
+    width: $sidenav-width;
+    background-color: $sidenav-background-color;
+    border-radius: $default-border-radius;
+    box-shadow: $default-box-shadow;
+}
+
+.interaction-sidenav {
+    width: $sidenav-width;
+    background-color: $text-color-1;
+}
+
+mat-sidenav-content {
+    margin: 0 0 $default-margin ($sidenav-width+($default-margin)) !important;
+
+    .right-container {
+        margin: $default-margin $default-margin $default-margin $default-margin !important;
+    }
+
+}
+
+dip-header {
+    display: block;
+}
+
+.sidenav-logo {
+    margin: $default-margin;
+    width: 75px;
+}
+
+.create-defund-button {
+    width: 220px;
+    position: absolute;
+    left: 40px;
+    bottom: $default-margin;
+    padding: $default-margin;
+    box-shadow: 0 2px 5px rgba(123, 0, 255, .69);
+}

@@ -1,0 +1,47 @@
+<div class="row">
+    <div class="col-12">
+        <div class="balance-container">
+            <div class="row">
+                <div class="col-3 my-balance">
+                    <span class="my-balance-title">AUM</span>
+                    <span class="my-balance-amount">{{utils.formatDollar((defundSummary$ | async)?.aum)}}</span>
+                </div>
+                <div class="col-3 my-balance">
+                    <span class="my-balance-title">My Balance</span>
+                    <span class="my-balance-amount">{{utils.formatDollar(myBalance$ | async)}}</span>
+                </div>
+                <div class="col-3 my-balance">
+                    <span class="my-balance-title">Performance</span>
+                    <span class="my-balance-amount" [class]="utils.getPerformanceClass(performancePercentage)">{{utils.getMyPerformance(performancePercentage)}}</span>
+                </div>
+                <div class="col-3 graph-controller text-center">
+                    <div class="separator"></div>
+                    <span class="my-balance-title">1H</span>
+                    <span class="my-balance-title">1D</span>
+                    <span class="my-balance-title">7D</span>
+                    <span class="my-balance-title">1M</span>
+                    <span class="my-balance-title">YTD</span>
+                    <span class="my-balance-title">ALL</span>
+                </div>
+            </div>
+            <div class="row">
+                <img class="my-balance-graph rounded mx-auto d-block" alt="my-balance"
+                     src="assets/img/my-balance.png">
+            </div>
+        </div>
+    </div>
+</div>
+<div class="row defund-overview-header">
+    <div class="col-4 defund-overview-title">
+        <div>About</div>
+    </div>
+</div>
+<div class="row">
+    <div class="col-12">
+        <div class="balance-container">
+            <span class="defund-about-text">
+<!--                This fund invests in low market cap alternative coins that have the potential to increase 100 times during the next bull market. Decentralized Finance (DeFi) is a truly revolutionary force in the financial industry. While traditional banks narrowly avoided a systemic bank run and centralized exchanges (CEX) collapsed spectacularly, DeFi continued to operate seamlessly, providing trustless financial services to people around the globe. It is clear that DeFi is the future of finance and will continue to shape the industry in unprecedented ways.-->
+                {{ defundDescription$ | async}}
+            </span>
+    </div>
+</div>

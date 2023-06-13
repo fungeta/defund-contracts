@@ -1,0 +1,18 @@
+@import "src/assets/variables";
+
+mat-toolbar {
+    background-color: transparent !important;
+    padding-right: $default-margin/2;
+    display: flex;
+
+    > dip-basic-button {
+        margin-right: $default-margin;
+    }
+
+    :last-child {
+        margin-right: 0;
+    }
+
+}
+
+

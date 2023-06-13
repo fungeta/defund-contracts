@@ -1,0 +1,12 @@
+<mat-toolbar>
+    <span class="separator"></span>
+    <!--        <mat-icon class="example-icon" aria-hidden="false" aria-label="Example heart icon">favorite</mat-icon>-->
+    <!--        <mat-icon class="example-icon" aria-hidden="false" aria-label="Example delete icon">delete</mat-icon>-->
+    <button mat-raised-button class="dip-basic-button" *ngIf="!checkConnectedAddress(connectedAddress)" (click)="connectToWallet()">
+        {{ 'app.header.connectToWallet' | translate}}
+    </button>
+    <button mat-raised-button class="dip-secondary-button"  *ngIf="checkConnectedAddress(connectedAddress)" (click)="disconnectFromWallet()">
+        {{utils.formatAddress(connectedAddress)}}
+    </button>
+</mat-toolbar>
+

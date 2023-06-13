@@ -1,0 +1,78 @@
+<div class="row table-row">
+    <div class="col-12">
+        <table mat-table [dataSource]="dataSource" class="dip-basic-table" matSort>
+
+            <!-- Icon Column -->
+            <ng-container matColumnDef="defund-portfolio-icon">
+                <th mat-header-cell *matHeaderCellDef> </th>
+                <td mat-cell *matCellDef="let element">
+                    <img class="table-icon" alt="element.icon" [src]="element.icon">
+                </td>
+            </ng-container>
+
+            <!-- Name Column -->
+            <ng-container matColumnDef="defund-portfolio-name">
+                <th class="text-center table-header-text" mat-header-cell *matHeaderCellDef mat-sort-header> Name </th>
+                <td class="text-center" mat-cell *matCellDef="let element"> {{element.name}} </td>
+            </ng-container>
+
+            <!-- Balance Column -->
+            <ng-container matColumnDef="defund-portfolio-balance">
+                <th class="text-center table-header-text" mat-header-cell *matHeaderCellDef mat-sort-header> Balance </th>
+                <td class="text-center" mat-cell *matCellDef="let element">
+                    <div class="balance-top-line">
+                        <span>${{element.balance.dollar.toFixed(2)}} ({{element.balance.percentage}}%)</span>
+                    </div>
+                    <div class="balance-bottom-line">
+                        <span>{{element.balance.token}} {{element.balance.tokenKey}}</span>
+                    </div>
+                </td>
+            </ng-container>
+
+            <!-- Price Column -->
+            <ng-container matColumnDef="defund-portfolio-price">
+                <th class="text-center table-header-text" mat-header-cell *matHeaderCellDef mat-sort-header> Price </th>
+                <td class="text-center" mat-cell *matCellDef="let element">
+                    <span>${{element.price.dollar.toFixed(2)}} </span><span [class]="getPerformanceClass(element.price.percentage)">({{getPercentageString(element.price.percentage)}})</span>
+                </td>
+            </ng-container>
+
+            <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+            <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+
+        </table>
+    </div>
+</div>
+<div class="row defund-overview-header">
+    <div class="col-4 defund-overview-title">
+        <div>NFT Portfolio</div>
+    </div>
+</div>
+<div class="row">
+    <div class="col-12">
+        <div class="default-container">
+            <div class="row">
+                <div class="col-2 offset-1">
+                    <img class="img-fluid" alt="nft" src="../../../../../../assets/img/nft1.png">
+                </div>
+                <div class="col-2 offset-2">
+                    <img class="img-fluid" alt="nft" src="../../../../../../assets/img/nft2.png">
+                </div>
+                <div class="col-2 offset-2">
+                    <img class="img-fluid" alt="nft" src="../../../../../../assets/img/nft3.png">
+                </div>
+            </div>
+            <div class="row second-nft-row">
+                <div class="col-2 offset-1">
+                    <img class="img-fluid" alt="nft" src="../../../../../../assets/img/nft4.png">
+                </div>
+                <div class="col-2 offset-2">
+                    <img class="img-fluid" alt="nft" src="../../../../../../assets/img/nft5.png">
+                </div>
+                <div class="col-2 offset-2">
+                    <img class="img-fluid" alt="nft" src="../../../../../../assets/img/nft6.png">
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

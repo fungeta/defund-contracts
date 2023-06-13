@@ -1,0 +1,34 @@
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-12 text-center">
+            <span class="create-defund-title">{{ "app.swap.swapTitle" | translate}}</span>
+            <img class="dialog-close-icon" src="assets/img/close.png" (click)="closePopUp()">
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-10 offset-1">
+            <div class="default-label">{{ "app.swap.amountToSwap" | translate }}</div>
+            <input class="default-input" name="defund-name" type="number" [(ngModel)]="amount">
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-10 offset-1">
+            <div class="default-label">{{ "app.swap.tokenIn" | translate }}</div>
+            <dip-select (currentValueChange)="changeFromToken($event)" [options]="tokens"></dip-select>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-10 offset-1">
+            <div class="default-label">{{ "app.swap.tokenOut" | translate }}</div>
+            <dip-select (currentValueChange)="changeToToken($event)" [options]="tokens"></dip-select>
+        </div>
+    </div>
+    <div class="row text-center">
+        <div class="col-5 offset-1">
+            <dip-basic-button (btnClick)="closePopUp()" label="Cancel"></dip-basic-button>
+        </div>
+        <div class="col-5">
+            <dip-basic-button [disabled]="checkSubmitButton()" label="Swap" (btnClick)="swap()"></dip-basic-button>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,43 @@
+@import '../../../assets/variables';
+
+.dip-list-item-title {
+    color: $text-color-1;
+    font-size: 1.5em;
+    line-height: 2em;
+    cursor: pointer;
+}
+
+.dip-list-item-second-line {
+    color: $text-color-1;
+    cursor: pointer;
+}
+
+.dip-list-item-icon {
+    color: $text-color-1 !important;
+    background-color: transparent !important;
+    margin-right: $default-margin !important;
+}
+
+mat-list-item {
+    margin: 0 0 $default-margin 0;
+    background-color: transparent !important;
+}
+
+.dip-list-item-container {
+    display: flex;
+    flex-direction: row;
+}
+
+.dip-list-item:hover {
+    .dip-list-item-title {
+        color: $text-color-1 !important;
+    }
+}
+
+.nav-bar-icon {
+    margin-top: 8px;
+    margin-right: 12px;
+    width: 30px;
+    height: 30px;
+}
+

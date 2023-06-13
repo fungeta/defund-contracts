@@ -1,0 +1,28 @@
+<div class="row">
+    <div class="col-12">
+        <table mat-table [dataSource]="defundsDataSource" class="dip-basic-table" matSort>
+
+            <!-- Name Column -->
+            <ng-container matColumnDef="portfolio-dashboard-defund-name">
+                <th class="text-center table-header-text" mat-header-cell *matHeaderCellDef mat-sort-header> Name </th>
+                <td class="text-center table-cell-text" mat-cell *matCellDef="let element"> {{element.name}} </td>
+            </ng-container>
+
+            <!-- Balance Column -->
+            <ng-container matColumnDef="portfolio-dashboard-defund-balance">
+                <th class="text-center table-header-text" mat-header-cell *matHeaderCellDef mat-sort-header> Balance </th>
+                <td class="text-center table-cell-text" mat-cell *matCellDef="let element"> {{utils.formatDollar(element.balance)}} </td>
+            </ng-container>
+
+            <!-- Performance Column -->
+            <ng-container matColumnDef="portfolio-dashboard-defund-performance">
+                <th class="text-center table-header-text" mat-header-cell *matHeaderCellDef mat-sort-header> Performance </th>
+                <td class="text-center table-cell-text" [class]="utils.getPerformanceClass(element.performance)" mat-cell *matCellDef="let element"> {{utils.getMyPerformance(element.performance)}} </td>
+            </ng-container>
+
+            <tr mat-header-row *matHeaderRowDef="getDisplayedColumns(defundsColumns)"></tr>
+            <tr mat-row *matRowDef="let row; columns: getDisplayedColumns(defundsColumns);"></tr>
+
+        </table>
+    </div>
+</div>

@@ -1,0 +1,44 @@
+@import "../../../../../assets/variables";
+
+.defund-header {
+    margin-top: $default-margin;
+
+    .defund-title {
+        font-size: 5em;
+        line-height: 1em;
+    }
+
+    .defund-subtitle {
+        margin-top: $default-margin;
+        font-size: 1.5em;
+        line-height: 1em;
+        display: flex;
+        gap: $default-margin;
+
+        .defund-subtitle-accent {
+            color: $signature-color-1;
+        }
+
+    }
+
+}
+
+.defund-action-button {
+    color: $text-color-1 !important;
+    background-color: $signature-color-1 !important;
+    width: 100%;
+    height: 60px;
+    font-size: 2em;
+    line-height: 1em;
+    border-radius: 10px;
+}
+
+::ng-deep .defund-action-menu {
+    color: $text-color-1 !important;
+    background-color: $signature-color-1 !important;
+}
+
+dip-defund-dashboard-members {
+    margin-top: $default-margin;
+    padding: 0;
+}

@@ -1,0 +1,85 @@
+@import "../../../assets/variables";
+
+.dropdown-collection {
+    width: 100%;
+    position: relative;
+}
+
+.dropdown-button {
+    background-color: white;
+    box-shadow: $card-box-shadow;
+    font-size: 1.5em;
+    border: solid 0;
+    border-radius: $default-border-radius;
+    padding: 10px;
+    line-height: 1.5em;
+    position: relative;
+    display: flex;
+    width: 100%;
+    cursor: pointer;
+    height: $input-height;
+}
+
+.dropdown-value {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.arrow {
+    border: solid black;
+    border-width: 0 3px 3px 0;
+    display: inline-block;
+    padding: 3px;
+}
+
+.down {
+    transform: rotate(45deg);
+    -webkit-transform: rotate(45deg);
+    margin: 0 10px 5px 0;
+}
+
+.dropdown-open-button {
+    outline: solid 2px $signature-color-1 !important;
+}
+
+.dropdown-list {
+    display: none;
+
+    background-color: white;
+    box-shadow: $card-box-shadow;
+    font-size: 1.5em;
+    border: solid 0;
+    border-radius: $default-border-radius;
+
+    list-style: none;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    padding: 0;
+    z-index: 10000;
+    right: 0;
+    margin: 0;
+    transform: translateY(105%);
+    li {
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        padding: 4px 16px;
+        cursor: pointer;
+        line-height: 1.5em;
+        &.selected {
+            background: darken($signature-color-1, 5%);
+            border-radius: $default-border-radius;
+            color: $text-color-1;
+        }
+        &:hover {
+            background: darken($signature-color-1, 5%);
+            border-radius: $default-border-radius;
+            color: $text-color-1;
+        }
+    }
+    &.dropdown-open {
+        display: block;
+    }
+}

@@ -1,0 +1,51 @@
+<div class="container-fluid">
+    <div class="row defund-header">
+        <div class="col-10">
+            <div class="row defund-title">
+                <div>{{defundSummary?.name}}</div>
+            </div>
+            <div class="defund-subtitle">
+                <div>
+                    <span>Manager: </span> <span class="defund-subtitle-accent">{{utils.formatAddress(defundSummary?.manager)}}</span>
+                </div>
+                <div>
+                    <span>Members: </span> <span class="defund-subtitle-accent">{{defundSummary?.members}}</span>
+                </div>
+            </div>
+        </div>
+        <div class="col-2">
+            <button mat-raised-button class="dip-basic-button defund-action-button" [matMenuTriggerFor]="menu">Actions
+            </button>
+
+            <!-- TODO: CUSTOM DIP ACTION MENU-->
+            <mat-menu #menu="matMenu" class="defund-action-menu">
+                <button mat-menu-item (click)="openDepositModal()">Deposit</button>
+                <button mat-menu-item (click)="openWithdrawnModal()">Withdrawn</button>
+                <button *ngIf="isManager" (click)="openSwapModal()" mat-menu-item>Swap</button>
+            </mat-menu>
+        </div>
+    </div>
+<!--    <div class="row defund-selector">-->
+<!--        <div class="col-12 defund-selector-container">-->
+<!--            <div class="row text-center">-->
+<!--                <div class="col-3" *ngFor="let tab of defundDashboardTabsList">-->
+<!--                    <div [class]="checkDefundSelectorClass(tab)"-->
+<!--                         (click)="changeTab(tab)">{{getDefundDashboardTabLabel(tab) | translate}}</div>-->
+<!--                </div>-->
+<!--            </div>-->
+<!--        </div>-->
+<!--    </div>-->
+    <div class="row">
+        <div class="col-4 offset-8">
+            <dip-slide-selector [tabList]="defundDashboardTabsList" [selectedTab]="selectedTab" (tabChange)="changeTab($event)"></dip-slide-selector>
+        </div>
+    </div>
+    <div class="row defund-container">
+        <app-defund-dashboard-overview
+            *ngIf="checkDefundSelector(DefundDashboardTabs.OVERVIEW)"></app-defund-dashboard-overview>
+        <dip-defund-dashboard-portfolio
+            *ngIf="checkDefundSelector(DefundDashboardTabs.PORTFOLIO)"></dip-defund-dashboard-portfolio>
+        <app-defund-dashboard-activity
+            *ngIf="checkDefundSelector(DefundDashboardTabs.ACTIVITY)"></app-defund-dashboard-activity>
+    </div>
+</div>

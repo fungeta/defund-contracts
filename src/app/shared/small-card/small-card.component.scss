@@ -1,0 +1,46 @@
+@import "../../../assets/variables";
+
+.dip-small-card {
+    background-color: $text-color-1;
+    border-radius: $default-border-radius;
+    box-shadow: $card-box-shadow;
+    display: flex;
+    flex-direction: row;
+    height: 140px;
+    padding: $default-margin;
+
+    .card-title-container {
+        display: flex;
+        flex-direction: column;
+        width: fit-content;
+
+        .card-title {
+            font-size: 3em;
+            line-height: 1.4em;
+        }
+
+        .card-subtitle {
+            font-size: 2em;
+            line-height: 1em;
+        }
+
+    }
+
+
+
+    .card-image-container {
+
+        img {
+            width: 80px;
+            height: 80px;
+        }
+    }
+
+    .temporal-background {
+        background-image: linear-gradient(140deg, #6a20bf, #01baef);
+        box-shadow: 0 4px 6px rgba(0, 0, 0, .12), 0 1px 4px rgba(0, 0, 0, .07);
+        border-radius: $default-border-radius;
+        margin-top: 6px;
+    }
+
+}

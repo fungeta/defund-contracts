@@ -1,0 +1,114 @@
+<div class="container-fluid">
+    <div class="row small-cards-container">
+        <dip-small-card *ngFor="let card of smallCards" class="col-3" [title]="card.title"
+                        [subtitle]="card.subtitle" [image]="card.image"></dip-small-card>
+    </div>
+    <div class="row">
+        <div class="col-6 input-height">
+            <input *ngIf="isDefundsTab()" class="filter-input" name="table-filter-input" type="text" placeholder="Filter" (keyup)="applyDefundFilter($event)" [(ngModel)]="defundsFilterInput">
+            <input *ngIf="isManagerTab()" class="filter-input" name="table-filter-input" type="text" placeholder="Filter" (keyup)="applyManagersFilter($event)" [(ngModel)]="managersFilterInput">
+        </div>
+        <div class="col-2">
+            <dip-select *ngIf="isDefundsTab()" (currentValueChange)="changeDefundsFilterColumn($event)" [options]="getFilterColumns(defundsColumns)"></dip-select>
+            <dip-select *ngIf="isManagerTab()" (currentValueChange)="changeManagersFilterColumn($event)" [options]="getFilterColumns(managerColumns)"></dip-select>
+        </div>
+        <div class="col-3 offset-1 input-height">
+            <dip-slide-selector [tabList]="tableTabs" [selectedTab]="tableTabs[0]" (tabChange)="changeTab($event)"></dip-slide-selector>
+        </div>
+    </div>
+    <div *ngIf="isDefundsTab()" class="row">
+        <div class="col-12">
+            <table mat-table [dataSource]="defundsDataSource" class="dip-basic-table" matSort>
+
+                <!-- Name Column -->
+                <ng-container matColumnDef="network-dashboard-defund-name">
+                    <th class="text-center table-header-text" mat-header-cell *matHeaderCellDef mat-sort-header> Name </th>
+                    <td class="text-center table-cell-text" mat-cell *matCellDef="let element"> {{element.name}} </td>
+                </ng-container>
+
+                <!-- AUM Column -->
+                <ng-container matColumnDef="network-dashboard-defund-aum">
+                    <th class="text-center table-header-text" mat-header-cell *matHeaderCellDef mat-sort-header> AUM </th>
+                    <td class="text-center table-cell-text" mat-cell *matCellDef="let element"> {{utils.formatDollar(element.aum)}} </td>
+                </ng-container>
+
+                <!-- DeFunds Column -->
+                <ng-container matColumnDef="network-dashboard-defund-manager">
+                    <th class="text-center table-header-text" mat-header-cell *matHeaderCellDef mat-sort-header> Manager </th>
+                    <td class="text-center table-cell-text" mat-cell *matCellDef="let element"> {{utils.formatAddress(element.manager)}} </td>
+                </ng-container>
+
+                <!-- Network Column -->
+                <ng-container matColumnDef="network-dashboard-defund-network">
+                    <th class="text-center table-header-text" mat-header-cell *matHeaderCellDef> Network </th>
+                    <td mat-cell *matCellDef="let element">
+                        <img class="table-icon" alt="element.icon" [src]="element.network">
+                    </td>
+                </ng-container>
+
+                <!-- Members Column -->
+                <ng-container matColumnDef="network-dashboard-defund-members">
+                    <th class="text-center table-header-text" mat-header-cell *matHeaderCellDef mat-sort-header> Members </th>
+                    <td class="text-center table-cell-text" mat-cell *matCellDef="let element"> {{element.members}} </td>
+                </ng-container>
+
+                <ng-container matColumnDef="network-dashboard-defund-join">
+                    <th class="text-center table-header-text" mat-header-cell *matHeaderCellDef>  </th>
+                    <td class="text-center table-cell-text" mat-cell *matCellDef="let element">
+                        <button class="table-inner-button" mat-raised-button (click)="openDefund(element)">
+                            Join
+                        </button>
+                    </td>
+                </ng-container>
+
+                <tr mat-header-row *matHeaderRowDef="getDisplayedColumns(defundsColumns)"></tr>
+                <tr mat-row *matRowDef="let row; columns: getDisplayedColumns(defundsColumns);"></tr>
+
+            </table>
+        </div>
+    </div>
+    <div *ngIf="isManagerTab()" class="row">
+        <div class="col-12">
+            <table mat-table [dataSource]="managersDataSource" class="dip-basic-table" matSort>
+
+                <!-- Name Column -->
+                <ng-container matColumnDef="network-dashboard-manager-name">
+                    <th class="text-center table-header-text" mat-header-cell *matHeaderCellDef mat-sort-header> Name </th>
+                    <td class="text-center table-cell-text" mat-cell *matCellDef="let element"> {{utils.formatAddress(element.name)}} </td>
+                </ng-container>
+
+                <!-- AUM Column -->
+                <ng-container matColumnDef="network-dashboard-manager-aum">
+                    <th class="text-center table-header-text" mat-header-cell *matHeaderCellDef mat-sort-header> AUM </th>
+                    <td class="text-center table-cell-text" mat-cell *matCellDef="let element"> {{utils.formatDollar(element.aum)}} </td>
+                </ng-container>
+
+                <!-- DeFunds Column -->
+                <ng-container matColumnDef="network-dashboard-manager-defunds">
+                    <th class="text-center table-header-text" mat-header-cell *matHeaderCellDef mat-sort-header> Defunds </th>
+                    <td class="text-center table-cell-text" mat-cell *matCellDef="let element"> {{element.defunds}} </td>
+                </ng-container>
+
+                <!-- Network Column -->
+                <ng-container matColumnDef="network-dashboard-manager-network">
+                    <th class="text-center table-header-text" mat-header-cell *matHeaderCellDef> Network </th>
+                    <td mat-cell *matCellDef="let element">
+                        <img class="table-icon" alt="element.icon" [src]="element.network">
+                    </td>
+                </ng-container>
+
+                <!-- Members Column -->
+                <ng-container matColumnDef="network-dashboard-manager-members">
+                    <th class="text-center table-header-text" mat-header-cell *matHeaderCellDef mat-sort-header> Members </th>
+                    <td class="text-center table-cell-text" mat-cell *matCellDef="let element"> {{element.members}} </td>
+                </ng-container>
+
+                <!--               TODO: BUTTON COLUMN-->
+
+                <tr mat-header-row *matHeaderRowDef="getDisplayedColumns(managerColumns)"></tr>
+                <tr mat-row *matRowDef="let row; columns: getDisplayedColumns(managerColumns);"></tr>
+
+            </table>
+        </div>
+    </div>
+</div>

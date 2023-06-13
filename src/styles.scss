@@ -1,0 +1,235 @@
+/* You can add global styles to this file, and also import other style files */
+@import "./assets/variables";
+
+html, body {
+    height: 100%;
+}
+
+body {
+    margin: 0;
+    font-family: Roboto, "Helvetica Neue", sans-serif;
+    background-color: $background-color;
+}
+
+.separator {
+    flex: 1 1 auto;
+}
+
+
+.dip-basic-button {
+    color: $text-color-1 !important;
+    background-color: $signature-color-1 !important;
+    width: fit-content;
+    height: 60px;
+    font-size: 1.3em;
+    border-radius: $default-border-radius;
+}
+
+.filter-input-form-field, .column-select-form-field {
+    width: 100%;
+    height: 68px;
+
+    .mat-mdc-text-field-wrapper {
+        background-color: white;
+        border-radius: $default-border-radius;
+        box-shadow: $card-box-shadow;
+    }
+
+    .mdc-notched-outline__leading {
+        border-top-left-radius: $default-border-radius !important;
+        border-bottom-left-radius: $default-border-radius !important;
+        min-width: $default-margin !important;
+        //border-left: solid 1px $signature-color-1;
+        //border-top: solid 1px $signature-color-1;
+        //border-bottom: solid 1px $signature-color-1;
+        border-color: transparent !important;
+    }
+
+    .mdc-notched-outline__trailing {
+        border-top-right-radius: $default-border-radius !important;
+        border-bottom-right-radius: $default-border-radius !important;
+        min-width: $default-margin !important;
+        //border-right: solid 1px $signature-color-1;
+        //border-top: solid 1px $signature-color-1;
+        //border-bottom: solid 1px $signature-color-1;
+        border-color: transparent !important;
+    }
+
+    .mdc-notched-outline__notch {
+        //border-top: solid 1px $signature-color-1;
+        //border-bottom: solid 1px $signature-color-1;
+        border-color: transparent !important;
+    }
+
+}
+
+.table-filter-input, .table-filter-column {
+    width: 100%;
+    border-radius: $default-border-radius;
+    height: 68px;
+    border: none;
+    box-shadow: $card-box-shadow;
+}
+
+.dip-basic-table {
+    border-collapse: separate;
+    border-radius: $default-border-radius;
+    box-shadow: $card-box-shadow;
+    padding: 10px;
+}
+
+.input-height {
+    height: 55px;
+}
+
+.margin-top {
+    margin-top: $default-margin;
+}
+
+.margin-bottom {
+    margin-bottom: $default-margin;
+}
+
+.default-input {
+    width: 100%;
+    background-color: white;
+    box-shadow: $card-box-shadow;
+    font-size: 1.5em;
+    border: solid 0;
+    border-radius: $default-border-radius;
+    padding: 10px;
+    line-height: 1.5em;
+    height: 55px;
+
+    &:focus, &:focus-visible {
+        outline: solid 2px $signature-color-1;
+    }
+}
+
+.default-textarea {
+    width: 100%;
+    background-color: white;
+    box-shadow: $card-box-shadow;
+    font-size: 1.5em;
+    border: solid 0;
+    border-radius: $default-border-radius;
+    padding: 10px;
+    line-height: 1.5em;
+
+    &:focus, &:focus-visible {
+        outline: solid 2px $signature-color-1;
+    }
+}
+
+.default-label {
+    font-size: 1.5em;
+    margin-top: $default-margin/2;
+    margin-bottom: $default-margin/2;
+}
+
+.mat-dialog-container, .mat-mdc-dialog-surface {
+    border-radius: $default-border-radius !important;
+    box-shadow: 0 2px 5px #614cbe !important;
+    //border-radius: $default-border-radius;
+}
+
+.row {
+    margin-top: $default-margin/2;
+}
+
+.positive-percentage{
+    color: #53b433;
+}
+.negative-percentage{
+    color: red ;
+}
+
+.table-icon {
+    margin-top: $default-margin/2;
+    margin-bottom: $default-margin/2;
+    width: 36px;
+    height: 36px;
+}
+
+.default-container {
+    margin-top: $default-margin;
+    padding: $default-margin;
+    border-radius: $default-border-radius;
+    background-color: #f8f9fa;
+    box-shadow: $card-box-shadow;
+}
+
+.filter-input, .column-select {
+    width: 100%;
+    background-color: white;
+    box-shadow: $card-box-shadow;
+    font-size: 1.5em;
+    border: solid 0;
+    border-radius: $default-border-radius;
+    padding: 10px;
+    line-height: 1.5em;
+}
+
+.column-select {
+    cursor: pointer;
+}
+
+.filter-input:focus, .filter-input:focus-visible
+.column-select:focus, .column-select:focus-visible{
+    //border: solid 2px $signature-color-1;
+    outline: solid 2px $signature-color-1;
+}
+
+.table-header-text {
+    line-height: 1em;
+    font-size: 2em;
+}
+
+.table-cell-text {
+    font-size: 1.5em;
+    line-height: 1em;
+}
+
+.mat-sort-header-container {
+    justify-content: center;
+}
+
+.dip-basic-button {
+    color: $text-color-1 !important;
+    background-color: $signature-color-1 !important;
+    width: fit-content;
+    height: 60px !important;
+    font-size: 1.3em !important;
+    border-radius: 10px !important;
+}
+
+.dip-secondary-button {
+    color: $sidenav-background-color !important;
+    background-color: $background-color !important;
+    width: fit-content;
+    height: 60px !important;
+    font-size: 1.3em !important;
+    border-radius: 10px !important;
+}
+
+.dialog-close-icon {
+    width: $default-margin/2;
+    height: $default-margin/2;
+    position: absolute;
+    top: $default-margin/1.5;
+    right: $default-margin/1.5;
+    cursor: pointer;
+}
+
+.table-inner-button {
+    color: $text-color-1 !important;
+    background-color: $signature-color-1 !important;
+    border-radius: 10px !important;
+}
+
+.no-margin-top {
+    margin-top: 0 !important;
+}
+
+
+

@@ -1,0 +1,15 @@
+@import "../../../assets/variables";
+
+.dip-basic-button {
+    color: $text-color-1 !important;
+    background-color: $signature-color-1 !important;
+    width: fit-content;
+    height: 60px;
+    font-size: 1.3em;
+    border-radius: 10px;
+}
+
+.dip-basic-button-disabled {
+    background-color: #cccccc !important;
+    color: #666666 !important;
+}

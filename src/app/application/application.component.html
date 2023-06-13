@@ -1,0 +1,24 @@
+<mat-sidenav-container>
+    <!--LEFT NAVIGATION SIDENAV-->
+    <mat-sidenav class="navigation-sidenav" mode="side" opened [disableClose]="true">
+        <img src="assets/img/project_logo.png" alt="Project Logo" class="rounded mx-auto d-block sidenav-logo">
+        <dip-list [list]="navigationMenu"></dip-list>
+        <dip-list [list]="defundMenu"></dip-list>
+        <button mat-raised-button class="dip-basic-button create-defund-button" (click)="openCreateDefund()">
+            {{ 'app.sidenav.createDefund' | translate}}
+        </button>
+    </mat-sidenav>
+    <!--MAIN PAGE CONTENT-->
+    <mat-sidenav-content>
+        <div class="right-container">
+            <dip-header></dip-header>
+            <div class="main-container">
+                <router-outlet></router-outlet>
+<!--                <dip-footer (click)="loading()"></dip-footer>-->
+            </div>
+        </div>
+    </mat-sidenav-content>
+    <!--DYNAMIC RIGHT SIDENAV-->
+    <mat-sidenav #interactionSidenav class="interaction-sidenav" mode="over" position="end"></mat-sidenav>
+</mat-sidenav-container>
+<dip-spinner></dip-spinner>

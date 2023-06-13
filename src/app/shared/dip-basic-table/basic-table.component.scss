@@ -1,0 +1,53 @@
+@import '../../../assets/variables';
+
+.dip-basic-table {
+    border-collapse: separate;
+    border-radius: $default-border-radius;
+    box-shadow: $card-box-shadow;
+    padding: 10px;
+}
+
+.table-row {
+    margin-top: $default-margin;
+}
+
+.filter-input, .column-select {
+    width: 100%;
+    background-color: white;
+    box-shadow: $card-box-shadow;
+    font-size: 1.5em;
+    border: solid 0;
+    border-radius: $default-border-radius;
+    padding: 10px;
+    line-height: 1.5em;
+}
+
+.column-select {
+    cursor: pointer;
+}
+
+.filter-input:focus, .filter-input:focus-visible
+.column-select:focus, .column-select:focus-visible{
+    //border: solid 2px $signature-color-1;
+    outline: solid 2px $signature-color-1;
+}
+
+.column-select-container {
+
+    .column-select {
+        display: block;
+        width: 100%;
+        line-height: 1em;
+        font-size: 1.5em;
+        border-radius: $default-border-radius;
+        box-shadow: $card-box-shadow;
+        padding: $default-margin/2 $default-margin $default-margin/2 $default-margin;
+        border: solid 0;
+
+        // Remove the arrow
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        appearance: none;
+    }
+}
+

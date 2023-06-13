@@ -1,0 +1,8 @@
+<mat-list>
+    <mat-list-item class="dip-list-item" *ngFor="let item of list" (click)="onItemClick(item)">
+        <div class="dip-list-item-container">
+            <img alt="item.icon" *ngIf="item.icon" [src]="item.icon" class="nav-bar-icon">
+            <div class="dip-list-item-title">{{item.title | translate}}</div>
+        </div>
+    </mat-list-item>
+</mat-list>

@@ -1,0 +1,52 @@
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-12 text-center">
+            <span class="create-defund-title">{{ "app.createDefund.createDefundTitle" | translate}}</span>
+            <img class="dialog-close-icon" src="assets/img/close.png" (click)="closePopUp()">
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-10 offset-1">
+            <div class="default-label">{{ "app.createDefund.defundName" | translate }}</div>
+            <input class="default-input" name="defund-name" type="text" placeholder="Example: Fungi Panas" [(ngModel)]="defundName">
+        </div>
+    </div>
+<!--    <div class="row">-->
+<!--        <div class="col-10 offset-1">-->
+<!--            <div class="default-label">{{ "app.createDefund.chooseNetwork" | translate }}</div>-->
+<!--            <dip-select [options]="networks"></dip-select>-->
+<!--        </div>-->
+<!--    </div>-->
+    <div class="row">
+        <div class="col-10 offset-1">
+            <div class="default-label">{{ "app.createDefund.aboutDeFund" | translate }}</div>
+            <textarea rows="3" class="default-textarea" name="about-defund" placeholder="Max 250 characters" [(ngModel)]="defundDescription"></textarea>
+        </div>
+    </div>
+<!--    <div class="row">-->
+<!--        <div class="col-10 offset-1">-->
+<!--            <div class="default-label">{{ "app.createDefund.initialDeposit" | translate }}</div>-->
+<!--            <input class="default-input" name="initial-deposit" placeholder="Initial amount to deposit">-->
+<!--        </div>-->
+<!--    </div>-->
+<!--    <div class="row">-->
+<!--        <div class="col-10 offset-1">-->
+<!--            <div class="default-label">{{ "app.createDefund.username" | translate }}</div>-->
+<!--            <input class="default-input" name="username" placeholder="Max 20 characters">-->
+<!--        </div>-->
+<!--    </div>-->
+<!--    <div class="row">-->
+<!--        <div class="col-10 offset-1">-->
+<!--            <div class="default-label">{{ "app.createDefund.aboutYourself" | translate }}</div>-->
+<!--            <textarea rows="3" class="default-textarea" name="about-defund" placeholder="Max 250 characters"></textarea>-->
+<!--        </div>-->
+<!--    </div>-->
+    <div class="row text-center margin-bottom">
+        <div class="col-5 offset-1">
+            <dip-basic-button label="Cancel" (btnClick)="closePopUp()"></dip-basic-button>
+        </div>
+        <div class="col-5">
+            <dip-basic-button [disabled]="checkSubmitBtn()" label="Submit" (btnClick)="createDefund()"></dip-basic-button>
+        </div>
+    </div>
+</div>

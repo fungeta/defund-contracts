@@ -1,0 +1,52 @@
+<div class="row">
+    <div class="col-12">
+        <table mat-table [dataSource]="transactionDataSource" class="dip-basic-table">
+
+            <!-- Info Column -->
+            <ng-container matColumnDef="defund-dashboard-activity-info">
+                <td class="table-cell-text" mat-cell *matCellDef="let element">
+                    <div class="info-cell">
+                        <span class="info-cell-title">{{ getTransactionTitle(element.type) }}</span>
+                        <div *ngIf="isSwapTransaction(element.type)">
+                            <div class="info-cell-extra-line">
+                                <span class="info-cell-indicator">From: </span>
+                                <span>{{element.value}} {{utils.calculateTokenFromAddress(element.tokenIn)}}</span>
+                            </div>
+                            <div class="info-cell-extra-line">
+                                <span class="info-cell-indicator">To: </span>
+                                <span>{{utils.calculateTokenFromAddress(element.tokenOut)}}</span>
+                            </div>
+                        </div>
+                        <div *ngIf="!isSwapTransaction(element.type)">
+                            <div>
+                                <span class="info-cell-indicator">Amount: </span>
+                                <span>{{element.value}} {{utils.calculateTokenFromAddress(element.tokenIn)}}</span>
+                            </div>
+                        </div>
+                    </div>
+                </td>
+            </ng-container>
+
+            <!-- Executor Column -->
+            <ng-container matColumnDef="defund-dashboard-activity-executor">
+                <td class="text-center table-cell-text" mat-cell *matCellDef="let element">
+                    <div>
+                        <span class="info-cell-indicator">By: </span> <span>{{utils.formatAddress(element.from)}}</span>
+                    </div>
+                </td>
+            </ng-container>
+
+            <!-- Timestamp Column -->
+            <ng-container matColumnDef="defund-dashboard-activity-timestamp">
+                <td class="text-center table-cell-text" mat-cell *matCellDef="let element">
+                    <div>
+                        {{utils.parseTimestamp(element.timestamp)}}
+                    </div>
+                </td>
+            </ng-container>
+
+            <tr mat-row *matRowDef="let row; columns: getDisplayedColumns(activityColumns);"></tr>
+
+        </table>
+    </div>
+</div>

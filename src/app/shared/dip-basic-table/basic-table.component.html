@@ -1,0 +1,37 @@
+<div class="row" *ngIf="topRow">
+    <div class="col-6 input-height">
+        <input class="filter-input" name="table-filter-input" type="text" placeholder="Filter" (keyup)="applyFilter($event)" [(ngModel)]="input">
+    </div>
+    <div class="col-2">
+        <dip-select (currentValueChange)="changeFilterColumn($event)" [options]="getFilterColumns()"></dip-select>
+    </div>
+    <div class="col-3 offset-1">
+        <dip-slide-selector [tabList]="tableTabs" [selectedTab]="tableTabs[0]"></dip-slide-selector>
+    </div>
+</div>
+<div class="row table-row">
+    <div class="col-12">
+        <table mat-table [dataSource]="dataSource" class="dip-basic-table" matSort>
+            <ng-container *ngFor="let columnDef of columns" [matColumnDef]="columnDef.columnId">
+                <th mat-header-cell *matHeaderCellDef mat-sort-header> {{ columnDef.columnHeader | translate}} </th>
+                <td mat-cell *matCellDef="let row"> {{ row[columnDef.columnId] }} </td>
+            </ng-container>
+
+            <tr mat-header-row *matHeaderRowDef="getDisplayedColumns()"></tr>
+            <tr mat-row *matRowDef="let row; columns: getDisplayedColumns();"></tr>
+
+            <!-- Row shown when there is no matching data. -->
+            <tr class="mat-row" *matNoDataRow>
+                <td class="mat-cell" colspan="4">No data matching the filter "{{input}}"</td>
+            </tr>
+        </table>
+    </div>
+</div>
+
+
+<!--<div class="row">-->
+<!--    <div class="col-4 offset-8">-->
+<!--        <mat-paginator [pageSizeOptions]="[5, 10, 25, 100]" aria-label="Select page of users"></mat-paginator>-->
+<!--    </div>-->
+<!--</div>-->
+

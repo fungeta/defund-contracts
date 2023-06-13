@@ -1,0 +1,56 @@
+@import "../../../../../assets/variables";
+
+.integration-header {
+    margin-top: $default-margin;
+}
+
+.integration-title {
+    font-size: 5em;
+    line-height: 1em;
+}
+
+.integration-card-row {
+
+    &>* {
+        margin-left: $default-margin/2;
+        margin-right: $default-margin/2;
+    }
+}
+
+.integration-card {
+    background-color: $text-color-1;
+    border-radius: $default-border-radius;
+    box-shadow: $card-box-shadow;
+    display: block;
+
+    .integration-card-header {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: nowrap;
+
+        .integration-card-icon {
+            width: 75px;
+        }
+
+        .integration-card-title {
+            margin-top: 5px;
+            line-height: 1em;
+            font-size: 3em;
+            vertical-align: middle;
+        }
+
+    }
+
+    .integration-card-margin-top {
+        margin-top: $default-margin*2;
+    }
+
+    .integration-card-arrow {
+        line-height: 1em;
+        font-size: 3em;
+        margin-right: $default-margin;
+        margin-bottom: $default-margin/2;
+        cursor: pointer;
+    }
+
+}

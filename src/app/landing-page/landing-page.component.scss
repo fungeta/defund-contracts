@@ -1,0 +1,164 @@
+@import "../../assets/variables";
+
+.landing-page-container {
+    height: fit-content;
+    background-color: $sidenav-background-color;
+    padding: $default-margin;
+}
+
+.title-icon {
+    color: $signature-color-1 !important;
+    background-color: transparent !important;
+    margin-right: $default-margin !important;
+}
+
+.landing-title {
+    color: transparent !important;
+    -webkit-background-clip: text;
+    background-image: linear-gradient(45deg, #964bff, #60f 100%, #fff);
+    font-size: 7em;
+    line-height: 1em;
+    font-weight: 500;
+
+    dip-basic-buttom {
+        float: right;
+    }
+
+}
+
+.landing-page-subtitle {
+    color: $text-color-1;
+    font-size: 10em;
+    line-height: 1.2em;
+    margin-top: $default-margin*3;
+    font-weight: 500;
+}
+
+.landing-page-text {
+    color: $text-color-1;
+    font-size: 3em;
+    line-height: 1.5em;
+}
+
+.line-margin-top {
+    margin-top: $default-margin;
+}
+
+.landing-page-section {
+    margin-top: $default-margin*3;
+}
+
+::ng-deep {
+    .inverse-button {
+        button {
+           background-color: transparent !important;
+        }
+    }
+}
+
+
+.margin-left {
+    margin-left: $default-margin;
+}
+
+.custom-button-1 {
+    box-shadow: -2px -1px 5px rgba(255, 255, 255, .5), 0 1px 3px 2px #60f;
+    background-color: transparent !important;
+    color: $text-color-1 !important;
+    width: fit-content;
+    height: 60px;
+    border-radius: $default-border-radius;
+    border: none;
+    font-size: 2em;
+    margin-top: $default-margin;
+    padding: $default-margin/2;
+}
+
+.landing-page-card {
+    border: solid 2px $text-color-1;
+    margin: $default-margin $default-margin/2 0 $default-margin/2;
+    background-color: black;
+    background-image: linear-gradient(162deg, rgba(0, 0, 0, 0) 24%, #3c2092);
+    color: $text-color-1;
+    padding: $default-margin;
+    box-shadow: 1px -2px 5px #fff, 0 2px 5px #fff;
+    border-radius: $default-border-radius;
+
+    .landing-page-card-title {
+        font-size: 5em;
+        line-height: 1em;
+    }
+
+    .landing-page-card-text {
+        line-height: 1.2em;
+        font-size: 3.5em;
+    }
+
+    .landing-page-card-text-small {
+        line-height: 1.2em;
+        font-size: 2em;
+    }
+
+    .landing-page-card-button {
+        background-color: $text-color-1 !important;
+        color: $sidenav-background-color !important;
+        width: fit-content;
+        height: 60px;
+        border-radius: $default-border-radius;
+        border: none;
+        font-size: 2em;
+        font-weight: 500;
+        margin-top: $default-margin;
+        padding: $default-margin/2;
+    }
+
+}
+
+.landing-page-title-2 {
+    color: transparent;
+    font-size: 10em;
+    line-height: 1.2em;
+    margin-top: $default-margin*3;
+    background-color: $text-color-1;
+    background-image: linear-gradient(3deg, #e100ff, #9000ff);
+    -webkit-background-clip: text;
+    font-weight: 500;
+}
+
+.landing-page-section-start {
+    margin-top: $default-margin*10;
+}
+
+.landing-page-table {
+    height: 100px;
+    width: fit-content;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.custom-button-round {
+    display: block;
+    box-shadow: -3px -3px 6px 2px #743bb1, 2px 6px 6px 3px #5f379e;
+    background-color: transparent !important;
+    color: $text-color-1 !important;
+    border-radius: 50%;
+    border: solid 2px $text-color-1;
+    font-size: 4em;
+    margin-top: $default-margin;
+    margin-left: auto;
+    margin-right: auto;
+    height: 250px;
+    width: 250px;
+}
+
+.landing-page-socials {
+
+    display: inline;
+
+    .landing-page-socials-text {
+        color: $text-color-1;
+        font-size: 5em;
+        line-height: 2em;
+    }
+}
+

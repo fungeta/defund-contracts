@@ -1,0 +1,17 @@
+<!--<div class="row defund-selector">-->
+<!--    <div class="col-12 defund-selector-container">-->
+<!--        <div class="row text-center">-->
+<!--            <div [class]="checkDefundSelectorColClass(tabList)" *ngFor="let tab of tabList">-->
+<!--                <div [class]="checkDefundSelectorClass(tab)"-->
+<!--                     (click)="changeTab(tab)">{{getDefundDashboardTabLabel(tab) | translate}}</div>-->
+<!--            </div>-->
+<!--        </div>-->
+<!--    </div>-->
+<!--</div>-->
+
+<div class="row defund-selector text-center">
+    <div [class]="checkDefundSelectorColClass(tabList)" *ngFor="let tab of tabList">
+        <div [class]="checkDefundSelectorClass(tab)"
+             (click)="changeTab(tab)">{{getDefundDashboardTabLabel(tab) | translate}}</div>
+    </div>
+</div>

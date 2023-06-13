@@ -1,0 +1,30 @@
+.info-cell-title {
+    font-size: 2em;
+    line-height: 1.2em;
+    font-weight: 500;
+}
+
+.info-cell-indicator {
+    font-weight: 500;
+}
+
+.info-cell-extra-line {
+    font-size: 1.2em;
+    line-height: 1em;
+}
+
+.info-cell {
+    margin-top: 12px;
+    margin-bottom: 12px;
+}
+
+.mat-column-defund-dashboard-activity-executor,
+.mat-column-defund-dashboard-activity-timestamp {
+    //width: 48px;
+    text-align: center;
+}
+
+.mat-column-defund-dashboard-activity-info {
+    width: 500px;
+    //text-align: center;
+}

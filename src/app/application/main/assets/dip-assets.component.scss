@@ -1,0 +1,28 @@
+@import "../../../../assets/variables";
+
+.assets-header {
+    margin-top: $default-margin;
+}
+
+.assets-title {
+    font-size: 5em;
+    line-height: 1em;
+}
+
+.mat-column-assets-name,
+.mat-column-assets-price,
+.mat-column-assets-marketcap,
+.mat-column-assets-performance,{
+    font-size: 1.5em;
+    line-height: 1em;
+
+    .balance-top-line {
+        margin-top: $default-margin/2;
+    }
+
+    .balance-bottom-line {
+        color: gray;
+        margin-top: $default-margin/2;
+        margin-bottom: $default-margin/2;
+    }
+}

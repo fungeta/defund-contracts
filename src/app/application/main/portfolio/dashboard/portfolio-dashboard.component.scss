@@ -1,0 +1,53 @@
+@import "../../../../../assets/variables";
+
+.portfolio-header {
+    margin-top: $default-margin;
+}
+
+.portfolio-title {
+    font-size: 5em;
+    line-height: 1em;
+}
+
+.balance-container {
+    margin-top: $default-margin;
+    padding: $default-margin;
+    border-radius: $default-border-radius;
+    background-color: #f8f9fa;
+    box-shadow: $card-box-shadow;
+
+    .my-balance {
+        display: flex;
+        flex-direction: column;
+
+        .my-balance-title {
+            font-size: 2em;
+            line-height: 1.5em;
+        }
+
+        .my-balance-amount {
+            font-size: 3em;
+            line-height: 1.5em;
+        }
+    }
+
+    .graph-controller {
+        display: flex;
+        flex-direction: row;
+
+        &>* {
+            font-size: 2em;
+            line-height: 1.5em;
+            margin-left: $default-margin;
+        }
+
+    }
+
+    .my-balance-graph {
+        margin-top: $default-margin;
+        width: 750px;
+    }
+
+}
+
+

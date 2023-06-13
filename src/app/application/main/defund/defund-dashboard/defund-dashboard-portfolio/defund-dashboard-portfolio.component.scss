@@ -1,0 +1,48 @@
+@import "../../../../../../assets/variables";
+
+.mat-column-defund-portfolio-icon {
+    width: 48px;
+    text-align: center;
+}
+
+.mat-column-defund-portfolio-balance {
+    font-size: 1.5em;
+    line-height: 1em;
+
+    .balance-top-line {
+        margin-top: $default-margin/2;
+    }
+
+    .balance-bottom-line {
+        margin-top: $default-margin/2;
+        margin-bottom: $default-margin/2;
+    }
+}
+
+.mat-column-defund-portfolio-name, .mat-column-defund-portfolio-price {
+    font-size: 1.5em;
+    line-height: 1em;
+}
+
+.table-header-text {
+    line-height: 1em;
+    font-size: 2em;
+}
+
+.defund-overview-header {
+    margin-top: $default-margin*2;
+}
+
+.defund-overview-title {
+    font-size: 4em;
+    line-height: 1em;
+}
+
+.defund-about-text {
+    line-height: 1em;
+    font-size: 2em;
+}
+
+.second-nft-row {
+    margin-top: $default-margin*2;
+}

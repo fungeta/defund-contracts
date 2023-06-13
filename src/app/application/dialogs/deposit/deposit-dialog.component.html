@@ -1,0 +1,28 @@
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-12 text-center">
+            <span class="create-defund-title">{{ "app.deposit.depositTitle" | translate}}</span>
+            <img class="dialog-close-icon" src="assets/img/close.png" (click)="closePopUp()">
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-10 offset-1">
+            <div class="default-label">{{ "app.deposit.amountToDeposit" | translate }}</div>
+            <input class="default-input" name="defund-name" type="number" placeholder="Example: Fungi Panas" [(ngModel)]="amount">
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-10 offset-1">
+            <div class="default-label">{{ "app.deposit.token" | translate }}</div>
+            <dip-select (currentValueChange)="changeSelectedToken($event)" [options]="tokens"></dip-select>
+        </div>
+    </div>
+    <div class="row text-center">
+        <div class="col-5 offset-1">
+            <dip-basic-button (btnClick)="closePopUp()" label="Cancel"></dip-basic-button>
+        </div>
+        <div class="col-5">
+            <dip-basic-button [disabled]="checkSubmitButton()" label="Deposit" (btnClick)="deposit()"></dip-basic-button>
+        </div>
+    </div>
+</div>

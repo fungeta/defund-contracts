@@ -1,0 +1,13 @@
+<div class="dip-small-card">
+    <div class="card-title-container">
+        <span class="card-title">{{title | translate}}</span>
+        <span *ngIf="subtitle" class="card-subtitle">{{subtitle | translate}}</span>
+    </div>
+    <div class="separator"></div>
+    <div class="card-image-container">
+        <div class="temporal-background">
+            <img alt="planet" *ngIf="image" [src]="image">
+        </div>
+
+    </div>
+</div>

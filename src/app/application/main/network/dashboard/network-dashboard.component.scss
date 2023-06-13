@@ -1,0 +1,21 @@
+@import "src/assets/variables";
+
+.row {
+    margin-top: $default-margin;
+}
+
+.small-cards-container {
+
+}
+
+.new-defund-container {
+    padding: $default-margin $default-margin/2 $default-margin $default-margin/2;
+    border-radius: $default-border-radius;
+    background-color: #f8f9fa;
+    box-shadow: $card-box-shadow;
+}
+
+.mat-column-network-dashboard-defund-network, .mat-column-network-dashboard-manager-network, .mat-column-network-dashboard-defund-join {
+    width: 48px;
+    text-align: center;
+}
